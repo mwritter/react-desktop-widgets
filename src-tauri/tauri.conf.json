@@ -1,0 +1,75 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "beforeBuildCommand": "bun run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "react-desktop-widgets",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.yourname.dev",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "nsis": {
+          "installerIcon": "./icons/icon.ico"
+        }
+      }
+    },
+    "security": {
+      "csp": null,
+      "dangerousRemoteDomainIpcAccess": [
+        {
+          "scheme": "https",
+          "domain": "tauri.localhost",
+          "windows": ["main"],
+          "plugins": ["event", "shell", "os", "window"]
+        }
+      ]
+    },
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "fullscreen": false,
+        "title": "Demo-React",
+        "center": true,
+        "transparent": true,
+        "decorations": false,
+        "resizable": true,
+        "width": 800,
+        "height": 800
+      }
+  ]
+  }
+}
